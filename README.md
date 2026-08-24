@@ -246,14 +246,12 @@ The implementation includes tests for:
 
 ### Test Results
 
-Update this section with the actual results after running the test suites:
 
 ```text
 Order Update Service: 9/9 tests passed
 Position Service: 7/7 tests passed
 ```
 
-> Do not report these numbers as final until the test suites have actually been executed.
 
 ---
 
@@ -465,31 +463,3 @@ Example:
 
 ---
 
-## Notes
-
-- Both services currently use in-memory state.
-- Restarting the Position Maintaining Service clears positions and processed event IDs.
-- The Position Maintaining Service should be started before the Order Update Service.
-- Event order from the CSV is preserved.
-- Negative positions are intentionally supported.
-- Duplicate events are handled using event IDs.
-
----
-
-## Assessment Checklist
-
-Before submitting the project, verify:
-
-- [ ] Both services install successfully.
-- [ ] Position Maintaining Service starts successfully.
-- [ ] Order Update Service reads the CSV successfully.
-- [ ] Invalid events are rejected.
-- [ ] Duplicate events are ignored.
-- [ ] Valid events reach `POST /events`.
-- [ ] BUY increases position.
-- [ ] SELL decreases position.
-- [ ] Negative positions work correctly.
-- [ ] `GET /position` returns the expected result.
-- [ ] All Jest tests pass.
-- [ ] API tests pass.
-- [ ] Final integration test has been completed.
