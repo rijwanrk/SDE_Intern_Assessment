@@ -9,7 +9,6 @@ function processEvent(event) {
     quantity
   } = event;
 
-  // Duplicate event
   if (processedEventIds.has(event_id)) {
     return {
       processed: false,
@@ -18,7 +17,7 @@ function processEvent(event) {
     };
   }
 
-  // Validate event
+  
   if (
     !event_id ||
     !symbol ||
@@ -33,15 +32,13 @@ function processEvent(event) {
     };
   }
 
-  // First valid event wins
+
   processedEventIds.add(event_id);
 
-  // BUY increases position
   if (transaction_type === "BUY") {
     positions[symbol] = (positions[symbol] || 0) + quantity;
   }
 
-  // SELL decreases position
   if (transaction_type === "SELL") {
     positions[symbol] = (positions[symbol] || 0) - quantity;
   }

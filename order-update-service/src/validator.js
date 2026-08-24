@@ -1,5 +1,4 @@
 function validateOrder(row) {
-  // event_id check
   if (!row.event_id || row.event_id.trim() === "") {
     return {
       valid: false,
@@ -7,7 +6,6 @@ function validateOrder(row) {
     };
   }
 
-  // symbol check
   if (!row.symbol || row.symbol.trim() === "") {
     return {
       valid: false,
@@ -15,7 +13,6 @@ function validateOrder(row) {
     };
   }
 
-  // transaction_type check
   if (row.transaction_type !== "BUY" && row.transaction_type !== "SELL") {
     return {
       valid: false,
@@ -23,7 +20,6 @@ function validateOrder(row) {
     };
   }
 
-  // quantity check
   const quantity = Number(row.quantity);
 
   if (
@@ -39,7 +35,6 @@ function validateOrder(row) {
     };
   }
 
-  // Everything is valid
   return {
     valid: true,
     event: {
