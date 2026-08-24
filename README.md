@@ -188,11 +188,6 @@ cd position-service
 node src/index.js
 ```
 
-The service runs on:
-
-```text
-http://localhost:3001
-```
 
 ### Step 2: Start Order Update Service
 
@@ -206,6 +201,13 @@ node src/csvReader.js
 The Order Update Service reads the CSV file, validates each event, removes duplicates, and sends accepted events to the Position Maintaining Service.
 
 ---
+
+The service runs on:
+
+```text
+http://localhost:3001/position
+```
+
 
 ## Testing
 
